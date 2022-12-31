@@ -29,78 +29,17 @@
 
 
 <!-- Footer Area Starts -->
-<footer class="footer-area section-padding">
-    <div class="footer-widget">
-        <div class="container">
-            <div class="row">
-                <div class="col-xl-6 col-lg-6">
-                    <div class="single-widget-home mb-5 mb-lg-0">
-                        <h3 class="mb-4">Berita</h3>
-                        <ul>
-                            <?php $footer_berita  = $this->site_model->nav_berita(); ?>
-                            <?php foreach ($footer_berita as $nav_berita) { ?>
-                            <li class="mb-2"><a
-                                    href="<?php echo site_url('berita/pokja/' . $nav_berita->slug_pokja) ?>">
-                                    <?php echo $nav_berita->nama_pokja ?>
-                                </a></li>
-                            <?php } ?>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6">
-                    <div class="single-widge-home">
-                        <h3 class="mb-4">Galeri</h3>
-                        <div class="feed">
-                            <?php
-                            $galeri = $this->galeri_model->getAll_limit();
-                            foreach ($galeri as $gal) { ?>
-                            <img style="background: no-repeat center center scroll; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; 
-                                width:70px; height:55px;"
-                                src="<?php echo base_url('back_assets/upload/galeri/' . $gal->image) ?>" alt="feed">
-                            <?php } ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+<footer class="text-center text-white">
+    <!-- Grid container -->
+    <div class="container p-4"></div>
+    <!-- Grid container -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2020 Copyright:
+        <a class="text-white" href="https://mdbootstrap.com/">MDBootstrap.com</a>
     </div>
-    <div class="footer-copyright">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12">
-                    <img class="mb-3" src="<?php echo base_url('back_assets/img/' . $site['icon']) ?>" alt="" width="32"
-                        height="32">
-                    <h3 class="mb-3"><?php echo $site['namaweb'] . " " . $site['tagline'] ?></h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-8 col-md-6">
-                    <span>
-                        <?php echo $site['tentang'] ?>
-                        <br>
-                        Copyright &copy;
-                        <script>
-                        document.write(new Date().getFullYear());
-                        </script> <?php echo $site['namaweb'] . " " . $site['tagline'] ?>. All rights reserved.
-                        Powered by <u><a href="https://wa.link/5om5kr" target="_blank"> m1codes</a></u>
-                    </span>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="social-icons">
-                        <ul>
-                            <li><a href="<?php echo $site['twitter'] ?>" target="_blank"><i
-                                        class="fa fa-twitter"></i></a></li>
-                            <li><a href="<?php echo $site['facebook'] ?>" target="_blank"><i
-                                        class="fa fa-facebook"></i></a></li>
-                            <li><a href="<?php echo $site['instagram'] ?>" target="_blank"><i
-                                        class="fa fa-instagram"></i></a></li>
-                            <li><a href="<?php echo site_url('auth') ?>"><i class="fa fa-user"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- Copyright -->
 </footer>
 <!-- Javascript -->
 <script src="<?php echo base_url('front_assets/js/vendor/jquery-2.2.4.min.js') ?>"></script>

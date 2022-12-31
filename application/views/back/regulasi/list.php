@@ -4,6 +4,40 @@
             <!-- ini nama judul halaman -->
             <h1 class="mt-4"><?php echo $title ?></h1>
             <!-- sekarang masuk ke kolom isi konten -->
+            <!-- ini nama bread crumb -->
+            <ol class="breadcrumb">
+                <?php foreach ($this->uri->segments as $segment) : ?>
+                <?php $url = substr($this->uri->uri_string, 0, strpos($this->uri->uri_string, $segment)) . $segment;
+                    $is_active =  $url == $this->uri->uri_string; ?>
+                <li class="breadcrumb-item <?php echo $is_active ? 'active' : '' ?>">
+                    <?php if ($is_active) : ?>
+                    <?php echo ucfirst($segment) ?>
+                    <?php else : ?>
+                    <a href="<?php echo site_url($url) ?>"> <?php echo ucfirst($segment) ?></a>
+                    <?php endif; ?>
+                </li>
+                <?php endforeach; ?>
+            </ol>
+            <?php
+            // Notifikasi
+            if ($this->session->flashdata('sukses')) {
+                echo '<div class="alert alert-success">';
+                echo '<button class="close" data-dismiss="alert">&times;</button>';
+                echo $this->session->flashdata('sukses');
+                echo '</div>';
+            }
+            // Notifikasi
+            if ($this->session->flashdata('maaf')) {
+                echo '<div class="alert alert-danger">';
+                echo '<button class="close" data-dismiss="alert">&times;</button>';
+                echo $this->session->flashdata('maaf');
+                echo '</div>';
+            }
+            // Error
+            echo validation_errors('<div class="alert alert-danger">', '<button class="close" data-dismiss="alert">&times;</button></div>');
+            ?>
+
+
             <div class="card mb-4">
                 <div class="card-header">
                     <a href="<?php echo site_url('admin/surat') ?>"><i class="fas fa-arrow-left"></i> Kembali</a>
@@ -49,7 +83,8 @@
                                     </td>
                                     <td class="d-flex justify-content-center">
                                         <a href="#" class="btn btn-sm btn-light mr-1"><i class="fa fa-edit"></i></a>
-                                        <a href="#!" class="btn btn-light btn-sm"><i class="fas fa-trash"></i></a>
+                                        <a onclick="deleteConfirm('<?php echo site_url('admin/regulasi/deleteData/' . $data->id) ?>')"
+                                            href="#!" class="btn btn-light btn-sm"><i class="fas fa-trash"></i></a>
                                     </td>
                                 </tr>
                                 <?php $i++;
@@ -61,4 +96,40 @@
             </div> <!-- akhir div card -->
         </div> <!-- akhir container fluid -->
     </main>
+</div>
+
+<!-- modal -->
+
+<div class="modal fade" id="tambahMasuk">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                Tambah Data Regulasi
+            </div>
+            <form action="<?php echo site_url('admin/regulasi/TambahRegulasi') ?>" method="POST"
+                enctype="multipart/form-data">
+                <div class="modal-body">
+                    <label for="">Judul Hukum</label>
+                    <input type="text" class="form-control" name="judul_hukum" required>
+                </div>
+                <div class="modal-body">
+                    <label for="">Jenis</label>
+                    <input type="text" class="form-control" name="jenis" required>
+                </div>
+                <div class="modal-body">
+                    <label for="">Tahun</label>
+                    <input type="text" class="form-control" name="tahun" required>
+                </div>
+                <div class="modal-body">
+                    <label for="">File</label>
+                    <input type="file" class="form-control" name="file" required>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-primary" type="submit">Simpan</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </form>
+        </div>
+    </div>
 </div>

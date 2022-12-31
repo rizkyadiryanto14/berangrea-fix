@@ -12,6 +12,7 @@ class Regulasi extends CI_Controller
         $this->load->model('sliders_model');
         $this->load->model('struktur_model');
         $this->load->model("masukan_model");
+        $this->load->model('Regulasi_model');
         $this->load->library('form_validation');
     }
 
@@ -24,6 +25,7 @@ class Regulasi extends CI_Controller
             'keywords'         => "Regulasi Dan Informasi Peraturan Desa",
             'site'            => $site,
             'struktur'        => $struktur,
+            'result'        => $this->Regulasi_model->tampil_data(),
             'subscribe'     => false,
             'pakai_slide'    => false,
             'isi'            => 'front/isi/regulasi'

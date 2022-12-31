@@ -11,7 +11,7 @@ class Surat extends CI_Controller
 		$this->load->library('form_validation');
 		$this->load->model('surat_model');
 		$this->load->model('pokja_model');
-		if($this->session->userdata('akses_level') != 'superadmin')
+		if ($this->session->userdata('akses_level') != 'superadmin')
 			show_404();
 	}
 
@@ -27,7 +27,7 @@ class Surat extends CI_Controller
 		);
 		$this->load->view('back/wrapper', $data);
 	}
-	
+
 	function masuk() //list keluar
 	{
 		$pokja 	= $this->pokja_model->listing();
@@ -58,14 +58,14 @@ class Surat extends CI_Controller
 			} else { //kalau berhasil diupload ke sistem
 				$upload_data = array('uploads' => $this->upload->data());
 				$data = array(
-						'id_periode'	=> $this->session->userdata('active_periode'),
-						'id_pokja'		=> $this->input->post('id_pokja'),
-						'image'			=> $upload_data['uploads']['file_name'],
-						'keterangan'	=> $this->input->post('keterangan'),
-						'nomor'			=> $this->input->post('nomor'),
-						'tanggal' 		=> $this->input->post('tanggal'),
-						'jenis' 		=> 'masuk'
-					);
+					'id_periode'	=> $this->session->userdata('active_periode'),
+					'id_pokja'		=> $this->input->post('id_pokja'),
+					'image'			=> $upload_data['uploads']['file_name'],
+					'keterangan'	=> $this->input->post('keterangan'),
+					'nomor'			=> $this->input->post('nomor'),
+					'tanggal' 		=> $this->input->post('tanggal'),
+					'jenis' 		=> 'masuk'
+				);
 				$input = $this->surat_model->tambah_suratkeluar($data);
 				if ($input) {
 					$this->session->set_flashdata('sukses', 'Data surat masuk berhasil ditambahkan');
@@ -118,14 +118,14 @@ class Surat extends CI_Controller
 			} else { //kalau berhasil diupload ke sistem
 				$upload_data = array('uploads' => $this->upload->data());
 				$data = array(
-						'id_periode'	=> $this->session->userdata('active_periode'),
-						'id_pokja'		=> $this->input->post('id_pokja'),
-						'image'			=> $upload_data['uploads']['file_name'],
-						'keterangan'	=> $this->input->post('keterangan'),
-						'nomor'			=> $this->input->post('nomor'),
-						'tanggal' 		=> $this->input->post('tanggal'),
-						'jenis' 		=> 'keluar'
-					);
+					'id_periode'	=> $this->session->userdata('active_periode'),
+					'id_pokja'		=> $this->input->post('id_pokja'),
+					'image'			=> $upload_data['uploads']['file_name'],
+					'keterangan'	=> $this->input->post('keterangan'),
+					'nomor'			=> $this->input->post('nomor'),
+					'tanggal' 		=> $this->input->post('tanggal'),
+					'jenis' 		=> 'keluar'
+				);
 				$input = $this->surat_model->tambah_suratkeluar($data);
 				if ($input) {
 					$this->session->set_flashdata('sukses', 'Data surat keluar berhasil ditambahkan');

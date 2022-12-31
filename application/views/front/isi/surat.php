@@ -80,10 +80,10 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h3>Warning!!</h3>
+                    <h3>Konfirmasi</h3>
                 </div>
                 <div class="modal-title text-center">
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <h4 class="alert alert-info">Harap ke kantor desa untuk medapatkan tanda tangan serta cap dari
                             desa</h4>
                     </div>

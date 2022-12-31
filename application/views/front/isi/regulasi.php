@@ -38,7 +38,38 @@
 
     <section class="blog-posts-area section-padding3">
         <div class="container">
+            <div class="table-responsive">
 
+                <!-- masuk ke tabel -->
+                <table class="table table-striped table-bordered table-hover" id="dataTable" width="100%"
+                    cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th width="25" class="text-center">No.</th>
+                            <th>Judul Hukum</th>
+                            <th>Jenis</th>
+                            <th>Tahun</th>
+                            <th>File</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php $i = 1;
+                        foreach ($result as $data) { ?>
+                        <tr>
+                            <td class="text-center"><?php echo $i ?></td>
+                            <td><?php echo $data->judul_hukum ?></td>
+                            <td><?php echo $data->jenis ?></td>
+                            <td><?php echo $data->tahun ?></td>
+                            <td>
+                                <a href="<?php echo base_url('back_assets/upload/regulasi/' . $data->file) ?>"
+                                    target="_blank">Lihat</a>
+                            </td>
+                        </tr>
+                        <?php $i++;
+                        } ?>
+                    </tbody>
+                </table>
+            </div> <!-- akhir div tabel -->
         </div>
     </section>
 
