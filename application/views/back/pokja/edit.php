@@ -2,19 +2,19 @@
     <main>
         <div class="container-fluid">
             <!-- ini nama judul halaman -->
-            <h1 class="mt-4"><?php echo $title?></h1>
+            <h1 class="mt-4"><?php echo $title ?></h1>
             <!-- ini nama bread crumb -->
             <ol class="breadcrumb">
                 <?php foreach ($this->uri->segments as $segment) : ?>
-                    <?php $url = substr($this->uri->uri_string, 0, strpos($this->uri->uri_string, $segment)) . $segment;
+                <?php $url = substr($this->uri->uri_string, 0, strpos($this->uri->uri_string, $segment)) . $segment;
                     $is_active =  $url == $this->uri->uri_string; ?>
-                    <li class="breadcrumb-item <?php echo $is_active ? 'active' : '' ?>">
-                        <?php if ($is_active) : ?>
-                            <?php echo ucfirst($segment) ?>
-                        <?php else : ?>
-                            <a href="<?php echo site_url($url) ?>"> <?php echo ucfirst($segment) ?></a>
-                        <?php endif; ?>
-                    </li>
+                <li class="breadcrumb-item <?php echo $is_active ? 'active' : '' ?>">
+                    <?php if ($is_active) : ?>
+                    <?php echo ucfirst($segment) ?>
+                    <?php else : ?>
+                    <a href="<?php echo site_url($url) ?>"> <?php echo ucfirst($segment) ?></a>
+                    <?php endif; ?>
+                </li>
                 <?php endforeach; ?>
             </ol>
             <!-- flash sedikit -->
@@ -34,18 +34,21 @@
                 <div class="card-body">
 
                     <div class="form-group">
-                        <label>Nama Pokja</label>
-                        <input type="text" name="nama_pokja" placeholder="Nama pokja" value="<?php echo $pokja->nama_pokja ?>" required class="form-control">
+                        <label>Nama Lemabaga</label>
+                        <input type="text" name="nama_pokja" placeholder="Nama pokja"
+                            value="<?php echo $pokja->nama_pokja ?>" required class="form-control">
                     </div>
 
                     <div class="form-group">
                         <label>Keterangan</label>
-                        <textarea name="keterangan" class="form-control" placeholder="Keterangan"><?php echo $pokja->keterangan ?></textarea>
+                        <textarea name="keterangan" class="form-control"
+                            placeholder="Keterangan"><?php echo $pokja->keterangan ?></textarea>
                     </div>
 
                     <div class="form-group">
                         <label>Urutan tampil</label>
-                        <input type="number" name="urutan" placeholder="Urutan tampil" value="<?php echo $pokja->urutan ?>" required class="form-control">
+                        <input type="number" name="urutan" placeholder="Urutan tampil"
+                            value="<?php echo $pokja->urutan ?>" required class="form-control">
                     </div>
 
                     <div class="form-group">

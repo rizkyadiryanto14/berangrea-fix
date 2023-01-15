@@ -8,7 +8,6 @@ class Pengurus extends CI_Controller
 		parent::__construct();
 		$this->load->model('konfigurasi_model');
 		$this->load->model('struktur_model');
-		
 	}
 
 	public function index()
@@ -17,7 +16,7 @@ class Pengurus extends CI_Controller
 		$struktur	= $this->struktur_model->getAll();
 		$data 		= array(
 			'title'      	=> 'Pengurus TP-PKK',
-			'keywords' 	 	=> "Struktur, Pengurus, PKK, Desa Uma Beringin",
+			'keywords' 	 	=> "Struktur",
 			'site'			=> $site,
 			'pakai_slide'	=> false,
 			'subscribe' 	=> true,

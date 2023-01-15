@@ -2,7 +2,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="myModalLabel">Tambah Pokja</h4>
+                <h4 class="modal-title" id="myModalLabel">Tambah Lemabaga</h4>
                 <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body text-left">
@@ -16,18 +16,21 @@
                 ?>
 
                 <div class="form-group">
-                    <label>Nama Pokja</label>
-                    <input type="text" name="nama_pokja" placeholder="Nama pokja" value="<?php echo set_value('nama_pokja') ?>" required class="form-control">
+                    <label>Nama Lembaga</label>
+                    <input type="text" name="nama_pokja" placeholder="Nama pokja"
+                        value="<?php echo set_value('nama_pokja') ?>" required class="form-control">
                 </div>
 
                 <div class="form-group">
                     <label>Keterangan</label>
-                    <textarea name="keterangan" class="form-control" placeholder="Keterangan"><?php echo set_value('keterangan') ?></textarea>
+                    <textarea name="keterangan" class="form-control"
+                        placeholder="Keterangan"><?php echo set_value('keterangan') ?></textarea>
                 </div>
 
                 <div class="form-group">
                     <label>Urutan Tampil</label>
-                    <input type="number" name="urutan" placeholder="Urutan tampil" value="<?php echo set_value('urutan') ?>" required class="form-control">
+                    <input type="number" name="urutan" placeholder="Urutan tampil"
+                        value="<?php echo set_value('urutan') ?>" required class="form-control">
                 </div>
 
             </div>

@@ -30,6 +30,10 @@
                         <div class="sb-nav-link-icon"><i class="fas fa-file"></i></div>
                         Laporan
                     </a>
+                    <a class="nav-link" href="<?php echo site_url('admin/Penduduk') ?> ">
+                        <div class="sb-nav-link-icon"><i class="fas fa-users"></i></div>
+                        Penduduk
+                    </a>
 
                     <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#website"
                         aria-expanded="false" aria-controls="collapsePages">

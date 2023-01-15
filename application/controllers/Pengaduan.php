@@ -30,9 +30,4 @@ class Pengaduan extends CI_Controller
         );
         $this->load->view('front/landing', $data);
     }
-
-
-    public function idAdmin()
-    {
-    }
 }

@@ -22,9 +22,8 @@ class Kontak extends CI_Controller
 		$struktur	= $this->struktur_model->getAllTampil();
 		$data		= array(
 			'title'			=> 'Kontak Kami',
-			'keywords' 		=> "Kontak, PKK, Desa Uma Beringin",
+			'keywords' 		=> "Kontak",
 			'site'			=> $site,
-			'struktur'		=> $struktur,
 			'subscribe' 	=> false,
 			'pakai_slide'	=> false,
 			'isi'			=> 'front/isi/kontak'

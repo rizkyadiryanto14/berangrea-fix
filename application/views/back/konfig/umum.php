@@ -75,7 +75,7 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo site_url('admin/pokja') ?>"
-                                aria-selected="false">Pokja</a>
+                                aria-selected="false">Lembaga</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<?php echo site_url('admin/periode') ?>"

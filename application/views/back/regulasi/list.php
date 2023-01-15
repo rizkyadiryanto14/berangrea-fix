@@ -47,7 +47,7 @@
                         <div class="d-flex">
                             <p><a href="<?php echo site_url('admin') ?>" class="btn btn-success" data-toggle="modal"
                                     data-target="#tambahMasuk">
-                                    <i class="fa fa-plus"></i> Tambah Surat Masuk</a></p>
+                                    <i class="fa fa-plus"></i> Tambah Data Regulasi</a></p>
                         </div>
                         <div>
                             <p><a href="#!" onclick="window.print()" class="btn btn-secondary">

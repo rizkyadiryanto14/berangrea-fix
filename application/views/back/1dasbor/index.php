@@ -25,7 +25,7 @@
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 <button class="close" data-dismiss="alert">&times;</button>
                 <?php echo $this->session->flashdata('sukses'); ?>
-                <strong><?php echo $this->session->userdata('nama'); ?></strong> di Sistem Informasi Desa Berangrea
+                <strong><?php echo $this->session->userdata('nama'); ?></strong>
             </div>
             <?php endif; ?>
 

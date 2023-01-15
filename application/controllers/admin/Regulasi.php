@@ -56,7 +56,7 @@ class Regulasi extends CI_Controller
                     'judul_hukum'        => $this->input->post('judul_hukum'),
                     'file'               => $upload_data['uploads']['file_name'],
                     'jenis'              => $this->input->post('jenis'),
-                    'tahun'            => $this->input->post('tahun'),
+                    'tahun'              => $this->input->post('tahun'),
                 );
                 $input = $this->Regulasi_model->addRegulasi($data);
                 if ($input) {

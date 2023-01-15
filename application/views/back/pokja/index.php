@@ -41,7 +41,7 @@
                 </div>
                 <div class="card-body">
                     <p><button class="btn btn-secondary" data-toggle="modal" data-target="#myModal">
-                            <i class="fa fa-plus"></i> Tambah Pokja
+                            <i class="fa fa-plus"></i> Tambah Lembaga
                         </button></p>
 
                     <?php include('tambah.php') ?>
@@ -51,7 +51,7 @@
                             <thead>
                                 <tr>
                                     <th class="text-center">Urut</th>
-                                    <th>Nama Pokja</th>
+                                    <th>Nama Lemabaga</th>
                                     <th>Keterangan</th>
                                     <th>Slug</th>
                                     <th class="text-center">Action</th>
@@ -75,8 +75,6 @@
                                         <a href="<?php echo site_url('berita/pokja/' . $pokja->slug_pokja) ?>"
                                             target="_blank" class="btn btn-light btn-sm ml-1"><i
                                                 class="fa fa-eye"></i></a>
-                                        <a href="<?php echo base_url('admin/pokja/delete/' . $pokja->$id_pokja) ?>"
-                                            class="btn btn-danger btn-sm mr-1"><i class="fa fa-trash"></i></a>
                                     </td>
                                 </tr>
                                 <?php $i++;
